@@ -14,6 +14,7 @@
 
 #pragma once
 #include "ChildView.h"
+#include <utility>
 
 class CMainFrame : public CFrameWndEx
 {
@@ -56,6 +57,8 @@ protected:
 	afx_msg void OnUpdateApplicationLook(CCmdUI* pCmdUI);
 	DECLARE_MESSAGE_MAP()
 
+private:
+	std::pair<size_t, size_t> DEFAULT_WINDOW_SIZE = std::make_pair(640, 480);
 };
 
 

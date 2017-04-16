@@ -73,8 +73,16 @@ int CMainFrame::OnCreate(LPCREATESTRUCT lpCreateStruct)
 
 BOOL CMainFrame::PreCreateWindow(CREATESTRUCT& cs)
 {
-	if( !CFrameWndEx::PreCreateWindow(cs) )
+	cs.y = 0; // top position
+	cs.x = 0; // left position
+	cs.cx = this->DEFAULT_WINDOW_SIZE.first;
+	cs.cy = this->DEFAULT_WINDOW_SIZE.second;
+
+	if (!CFrameWndEx::PreCreateWindow(cs))
+	{
+
 		return FALSE;
+	}
 	// TODO: Modify the Window class or styles here by modifying
 	//  the CREATESTRUCT cs
 
